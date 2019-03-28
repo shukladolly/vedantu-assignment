@@ -1,8 +1,9 @@
-import { combineReducers } from "redux"
+import { combineReducers } from "redux";
 
-import profile from "./profileReducer"
-
+import profile from "./profileReducer";
+import project from "./projectReducer";
 
 export default combineReducers({
-  profile
-})
+  profile,
+  project
+});

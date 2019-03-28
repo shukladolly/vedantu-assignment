@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import "../App.css";
+import { getPersonalProfile } from "../actions/personalAction";
 class PersonalInfo extends Component {
   constructor() {
     super();
@@ -7,32 +9,29 @@ class PersonalInfo extends Component {
       results: {}
     };
   }
+  componentWillMount() {
+    this.props.getPersonalProfile();
+  }
 
-  // componentWillMount() {
-  //   fetch("https://api.github.com/users/supreetsingh247")
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       this.setState({ results: response });
-  //     });
-  // }
   render() {
+    console.log("this.props.profile ", this.props.profile);
     return (
       <div className="flex-container">
         <div>
           <img
             style={{ height: "200px" }}
             alt=""
-            src={this.props.info.avatar_url}
+            src={this.props.profile.avatar_url}
           />
         </div>
         <div>
-          <h2>{this.props.info.name}</h2>
+          <h2>{this.props.profile.name}</h2>
         </div>
-        <div>{this.props.info.login}</div>
-        <div>{this.props.info.bio}</div>
+        <div>{this.props.profile.login}</div>
+        <div>{this.props.profile.bio}</div>
         <button>Edit Bio</button>
-        <div>{this.props.info.company}</div>
-        <div>{this.props.info.login}</div>
+        <div>{this.props.profile.company}</div>
+        <div>{this.props.profile.login}</div>
         <div>India</div>
         <div>supreetsingh.247@gmail.com</div>
       </div>
@@ -40,4 +39,22 @@ class PersonalInfo extends Component {
   }
 }
 
-export default PersonalInfo;
+const mapDispatchToProps = dispatch => {
+  return {
+    getPersonalProfile: () => {
+      dispatch(getPersonalProfile());
+    }
+  };
+};
+
+const mapStateToProps = state => {
+  console.log("state", state);
+  return {
+    profile: state.profile.profileInfo
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PersonalInfo);

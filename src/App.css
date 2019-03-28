@@ -71,6 +71,7 @@
 .search {
   height: 30px;
   width: 70%;
+  align: left;
 }
 
 .nav {
@@ -88,6 +89,14 @@
 
 button {
   width: 30%;
-  margin: auto;
+  margin: 0 auto;
   height: 30px;
+}
+.project-info {
+  text-align: left;
+}
+select {
+  height: 30px;
+  padding: 2px;
+  margin: 2px;
 }

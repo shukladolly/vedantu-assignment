@@ -1,25 +1,25 @@
 export default function reducer(
   state = {
-    profileInfo: {}
+    projectInfo: []
   },
   action
 ) {
-  console.log("in reducer!!");
+  console.log("in reducer projectReducer!!");
   console.log(action);
 
   switch (action.type) {
-    case "PROFILE_INFO":
+    case "PROJECT_INFO":
       {
         return {
           ...state,
-          profileInfo: action.profileInfo
+          projectInfo: action.projectInfo
         };
       }
       break;
 
-    case "PROFILE_ERROR":
+    case "PROJECT_ERROR":
       {
-        throw new Error("Unable to fetch profile info!!");
+        throw new Error("Unable to fetch project info!!");
       }
       break;
   }
