@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-// import PersonalInfoContaner from "./containers/PersonalInfoContaner";
-// import ProjectInfoContainer from "./containers/ProjectInfoContainer";
 import PersonalInfo from "./components/PersonalInfo";
 import ProjectInfo from "./components/ProjectInfo";
 

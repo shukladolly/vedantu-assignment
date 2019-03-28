@@ -16,10 +16,6 @@ export function getPersonalProfile() {
         "Content-Type": "application/json"
       }
     }).then(response => Promise.all([response, response.json()]));
-    // }).then(response => {
-    //   console.log("response is ", response.json());
-    //   response.json();
-    // });
   }
 
   function fetchProfileSuccess(profileInfo) {

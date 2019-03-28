@@ -24,12 +24,8 @@ class ProjectInfo extends Component {
 
     if (e.target.value !== "") {
       currentList = this.state.projectInfo;
-      console.log("this.state.projectInfo ", this.state.projectInfo);
-
       newList = currentList.filter(item => {
-        console.log("item ", item);
         const lc = item.name.toLowerCase();
-        console.log("lc ", lc);
         // change search term to lowercase
         const filter = e.target.value.toLowerCase();
         return lc.includes(filter);
@@ -40,7 +36,6 @@ class ProjectInfo extends Component {
     this.setState({
       projectInfo: newList
     });
-    console.log("here newList is ", newList);
     //  this.props.updateProjectInfo(newList);
   };
 
@@ -52,9 +47,6 @@ class ProjectInfo extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("here this.props.project ", prevProps, prevState);
-
-    console.log("this.state.projectInfo ", this.props.project);
     if (prevProps.project != this.props.project) {
       this.setState({
         projectInfo: this.props.project
@@ -63,25 +55,7 @@ class ProjectInfo extends Component {
   }
 
   render() {
-    //  console.log("this.state.projectInfo ", this.state.projectInfo);
-    console.log("now the new props are ", this.props.project);
-    //  let projectInformation = this.props.project;
     let projectInformation = this.state.projectInfo;
-    console.log("projectInformation", projectInformation);
-    // var arrKeywords = [];
-    // this.props.info.forEach(function(arrayItem) {
-    //   arrKeywords.push(arrayItem.name);
-    // });
-    // console.log("arrKeywords ", arrKeywords);
-
-    // console.log("hhh", this.props.info);
-    // var filteredInfo = this.props.info;
-    // console.log("this.state.filterArr", this.state.filterArr);
-
-    // var filterSearch = filteredInfo.filter(elem =>
-    //   this.state.filterArr.includes(elem.name)
-    // );
-    // console.log("filteredInfo filteredInfo ", filterSearch);
 
     const projectInfo =
       //    this.state.projectInfo &&
