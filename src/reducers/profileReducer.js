@@ -4,9 +4,6 @@ export default function reducer(
   },
   action
 ) {
-  console.log("in reducer!!");
-  console.log(action);
-
   switch (action.type) {
     case "PROFILE_INFO":
       {

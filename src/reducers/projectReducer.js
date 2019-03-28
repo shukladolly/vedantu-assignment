@@ -4,9 +4,6 @@ export default function reducer(
   },
   action
 ) {
-  console.log("in reducer projectReducer!!");
-  console.log(action);
-
   switch (action.type) {
     case "PROJECT_INFO":
       {

@@ -14,7 +14,6 @@ class PersonalInfo extends Component {
   }
 
   render() {
-    console.log("this.props.profile ", this.props.profile);
     return (
       <div className="flex-container">
         <div>
